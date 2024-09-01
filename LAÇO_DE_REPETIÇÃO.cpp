@@ -1,3 +1,5 @@
+// TRABALHO DE ANA V2
+
 /* 1) Uma loja tem 15 clientes cadastrados e deseja enviar uma correspondência a cada um deles
 anunciando um bônus especial. Faça um programa que leia o valor das compras destes 15
 clientes. Calcule e mostre um bônus de 10% se o valor das compras for menor que R$ 1.000,
