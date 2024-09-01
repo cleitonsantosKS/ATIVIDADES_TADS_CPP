@@ -157,3 +157,119 @@ using namespace std;
        
     }
 
+
+  /* Faça um programa que apresente um menu com as seguintes opções:
+
+● média aritmética
+● média ponderada
+● sair do programa
+
+Leia a opção escolhida pelo usuário e com base nela:
+
+● média aritmética: ao escolher esta opção, solicite duas notas, calcule e
+mostre a média aritmética na tela.
+● média ponderada: ao escolher esta opção, solicite três notas e seus
+respectivos pesos. Calcule a média ponderada e mostre o valor na tela.
+● sair do programa: o laço de repetição se encerra.*/
+
+#include <iostream>
+
+using namespace std;
+
+    int main ()
+    {
+        int X;
+        cout<<"SELECIONE O MENU \n"
+               "(1) = média aritmética\n"
+               "(2) = média ponderada\n"
+               "(0) = sair do programa\n"<<endl;
+               
+        cin>>X; 
+        
+        while (X != 0) // ou while (X > 0)
+        {
+            
+            
+           switch (X)
+           {
+               case 1:
+                {
+                   cout<<" média aritmética"<<endl;
+                   float valor[2];
+                   float contador1=0; // armazena as somas dos valores
+                   float media;
+                   
+                  for (int i =0 ; i<2; i++)
+                    {
+                     cout<< "digite o "<<i + 1 << "° valor" <<endl;
+                     cin>>valor[i];
+                     
+                     contador1 = contador1 + valor[i];
+                     
+                    }
+                    
+                    media = contador1 / 2;
+                    
+                    cout<<"média aritmética = "<<media<<"\n"<<endl; // o \n e para da espaco para ficar mais organizado!
+                    
+                    break;
+                }
+               
+               case 2:
+                {
+                    cout<<" média ponderada"<<endl;
+                    float valor[3];
+                    int peso[3];
+                   float contador1=0; // multiplica a nota pelo peso para armazenar as somas do resultado
+                   float contador2=0; // soma os pesos
+                   float media;
+                   
+                  for (int i =0 ; i<3; i++)
+                    {
+                     cout<< "digite o "<<i + 1 << "° valor" <<endl;
+                     cin>>valor[i];
+                     
+                     cout<< "digite o peso de "<< valor[i] <<endl;
+                     cin>>peso[i];
+                     
+                     contador1 =contador1 + ( valor[i] * peso[i] ); // multiplica a nota pelo peso e soma as multiplicacão
+                     contador2 = contador2 + peso[i];  // soma os pesos
+                    // contador3 = contador1 + contador1; // soma todas as notas multiplicadas pelos pesos
+                     
+                     
+                    }
+                    
+                    media = contador1 / contador2;
+                    
+                    cout<<" média ponderada = "<<media<<"\n"<<endl;
+                    
+                    
+                    break;
+                }
+               
+               default:
+                    cout<<"NUMERO INVALIDO\n"<<endl;
+               
+           }
+           
+           // repete a opsão de escolha do menu
+           cout<<"SELECIONE O MENU \n"
+               "(1) = média aritmética\n"
+               "(2) = média ponderada\n"
+               "(0) = sair do programa\n"<<endl;
+               
+            cin>>X;
+        }
+        
+        
+        if (X==0)
+        {
+          cout<<"SAINDO"<<endl;  
+        }
+        
+        //TESTE DE SAIDA
+        
+      //  cout<<X<<endl;
+        
+        return 0;
+    }
