@@ -1,4 +1,4 @@
-/* Uma loja tem 15 clientes cadastrados e deseja enviar uma correspondência a cada um deles
+/* 1) Uma loja tem 15 clientes cadastrados e deseja enviar uma correspondência a cada um deles
 anunciando um bônus especial. Faça um programa que leia o valor das compras destes 15
 clientes. Calcule e mostre um bônus de 10% se o valor das compras for menor que R$ 1.000,
 e 15% caso seja maior que R$ 1.000.*/ 
@@ -52,7 +52,7 @@ using namespace std;
     }
 
 
-/* Faça um programa que leia o tamanho do conjunto de dados a serem lidos do teclado. Estes
+/* 2) Faça um programa que leia o tamanho do conjunto de dados a serem lidos do teclado. Estes
 dados são: idade, peso, altura. Calcule e mostre:
 ● a média das idades das pessoas;
 ● a quantidade de pessoas com peso superior a 90kg e altura inferior a 1m50cm;
@@ -158,7 +158,7 @@ using namespace std;
     }
 
 
-  /* Faça um programa que apresente um menu com as seguintes opções:
+  /* 3) Faça um programa que apresente um menu com as seguintes opções:
 
 ● média aritmética
 ● média ponderada
@@ -270,6 +270,105 @@ using namespace std;
         //TESTE DE SAIDA
         
       //  cout<<X<<endl;
+        
+        return 0;
+    }
+
+
+/* 4) Em uma competição de salto em distância cada atleta tem direito a cinco saltos. No total
+existem 10 atletas. Em cada série, e para cada atleta, os 05 saltos devem ser lidos do
+teclado, sendo necessário, calcular a média alcançada por cada um deles. Você deve
+armazenar a maior e a menor média. Para identificação de cada atleta, considere que cada
+um deles recebe um código iniciado de 1. Logo o seu programa deve em cada execução do
+laço:
+
+Leitura da série do candidato 1:
+1.5
+6.5
+3
+4.75
+5.2
+Média do candidato 1: 4.19
+Leitura da série do candidato 2:
+2
+2
+2
+2
+2
+Média do candidato 2: 2
+Só ao final você deve mostrar o campeão e o desclassificado deste campeonato. */
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+    int main ()
+    {
+        int X; // para armazenar o número de vetores "Numero de candidatos" 
+        
+        cout << "DIGITE O NÚMERO DE CANDIDATOS:" << endl;
+        cin>>X;
+        
+        string candidato[X];
+        float media[X];
+        
+        float valor[5];
+        
+        for (int i=0; i<X; i++) // esse laço eu criei para adicionar o número referente ao candidato
+        {
+          candidato[i] = "candidato_"  +  to_string (i + 1);
+        }
+        
+        for (int i=0; i<X; i++)
+        
+        {
+            
+            cout <<candidato[i]<<endl;
+            
+            float cont=0;
+            
+            
+            for (int j=0; j<5; j++) //coleta os valores de cada salto dentro do laco de cada candidato
+            {
+                 cout<<j+1<< "° salto"<<endl;
+                 cin>>valor[j];
+                 
+                 cont=cont+valor[j];
+            }
+            
+            media[i] = cont / 5;
+        }
+        
+       
+        
+        float indice_maior = media[0];
+        float indice_menor = media[0];
+        int vetor_X; //Armazena a posição do índice do vetor de maior média
+        int vetor_Y; //Armazena a posição do índice do vetor de menor média
+        
+         for (int i=0; i<X; i++)
+        {   
+            if (indice_maior<media[i]) // compara as médias e Armazena a maior
+            {
+             indice_maior = media[i];
+             vetor_X=i; // Armazena a posição do índice maior
+             
+            }
+            
+            if (indice_menor>media[i]) // compara as médias e Armazena a menor
+            {
+             indice_menor = media[i];
+             vetor_Y=i;  // Armazena a posição do índice maior
+             
+            }
+        }
+        
+        
+       cout<<"O "<<candidato[vetor_X]<<" é campeão com média = "<<indice_maior<<endl;
+       
+       cout<<"O "<<candidato[vetor_Y]<<" é desclassificado com média = "<<indice_menor<<endl;
+       
         
         return 0;
     }
