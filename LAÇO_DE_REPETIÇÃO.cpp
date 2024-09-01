@@ -387,9 +387,9 @@ using namespace std;
     {
        int tabuada, inicio, fim;
        
-       cout<<"Motar a tabuada de: "<<endl;
+       cout<<"Montar a tabuada de: "<<endl;
        cin>>tabuada;
-       cout<<"comecar por: "<<endl;
+       cout<<"começar por: "<<endl;
        cin>>inicio;
        cout<<"Terminar em: "<<endl;
        cin>>fim;
