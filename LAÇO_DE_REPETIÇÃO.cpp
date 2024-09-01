@@ -123,7 +123,7 @@ using namespace std;
         
         
         // LACO DE TESTE DE VETORES
-        
+        /*
         for (int i=0; i<X; i++) 
         {
            cout<<pessoas[i]<<endl;
@@ -133,6 +133,7 @@ using namespace std;
            
            
         }
+        */
         
         // RESPOSTAS DA ATIVIDADE
         
