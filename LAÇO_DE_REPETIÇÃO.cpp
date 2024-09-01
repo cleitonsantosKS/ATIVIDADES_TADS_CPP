@@ -415,3 +415,48 @@ using namespace std;
         
         return 0;
     }
+
+
+/* 6) Faça um programa em C++ para ler um número real e exibir uma tabela em que o número
+ apareça multiplicado até 200, sendo 10 em cada linha. Esta tabela é útil para deixar afixada
+ emlojas de Xerox, por exemplo: */
+
+
+#include <iostream>
+
+using namespace std;
+
+    int main ()
+    {
+       float numero;
+       
+       cout<<"Montar a tabela de: "<<endl;
+       cin>>numero;
+      
+     
+       
+       cout<<"Vou montar a tabela de "<<numero<<"multiplicado Até 200"<<endl;
+      
+     int contador=0;
+      
+       for (int i=0; i<200; i++)
+       {
+           
+           
+           cout<<" "<<i+1<<" = "<<(1+i)*numero;
+           
+          
+               // Verifica se i + 1 (número atual) é divisível por 10
+            if ((i + 1) % 10 == 0) // sendo 10 em cada linha.
+            {
+                cout <<"\n"<< endl; // Adiciona uma nova linha
+            }
+            else
+            {
+                cout << " | "; // Adiciona um separador
+            }
+       }
+       
+        
+        return 0;
+    }
