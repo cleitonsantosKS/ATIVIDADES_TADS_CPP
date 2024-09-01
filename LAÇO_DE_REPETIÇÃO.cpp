@@ -372,3 +372,44 @@ using namespace std;
         
         return 0;
     }
+
+
+/* 5) Desenvolva um programa que faça a tabuada de um número qualquer inteiro que será
+digitado pelo usuário, mas a tabuada não deve necessariamente iniciar em 1 e terminar em
+10, o valor inicial e final devem ser informados também pelo usuário, conforme exemplo
+abaixo: */
+
+#include <iostream>
+
+using namespace std;
+
+    int main ()
+    {
+       int tabuada, inicio, fim;
+       
+       cout<<"Motar a tabuada de: "<<endl;
+       cin>>tabuada;
+       cout<<"comecar por: "<<endl;
+       cin>>inicio;
+       cout<<"Terminar em: "<<endl;
+       cin>>fim;
+       
+      int N = fim - inicio + 1 ; // numerodecalculos
+       
+       cout<<"Vou montar a tabuada de "<<tabuada<<" iniciando em "<<inicio<<" Terminando em "<<fim<<endl;
+      
+       for (int i=0; i<N; i++)
+       {
+           cout<<inicio + i <<" X "<<tabuada<<" = "<<(inicio+i)*tabuada<<endl;
+          
+       }
+       
+       
+       //TESTE SAIDA RESULTADO DE N
+       
+      // std::cout << N << std::endl;
+       
+        
+        
+        return 0;
+    }
