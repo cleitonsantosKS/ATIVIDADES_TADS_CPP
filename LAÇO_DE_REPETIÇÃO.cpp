@@ -552,106 +552,137 @@ int main(){
 
 /*
 
-10) Escrever um algoritmo que leia uma quantidade desconhecida de números e conte quantos deles estão nos seguintes intervalos: [0-25], [26-50], [51-75] e [76-100]. A entrada de dados deve terminar quando for lido um número negativo. 
+10) Escrever um algoritmo que leia uma quantidade desconhecida 
+de números e conte quantos deles estão nos seguintes intervalos:
+[0-25], [26-50], [51-75] e [76-100].
+A entrada de dados deve terminar quando for lido um número negativo. 
+*/
+#include<iostream>
+
+using namespace std;
+int main()
+{
+int n, cont=0, cont1=0, cont2=0, cont3=0;
+
+    while( n>=0)
+    {
+        cout<<" Digite um numero: "<<endl;
+        cin>>n;
+        	if( n>=0 && n<=25)
+        {
+          cont++;
+        }
+        	else if( n>=26 && n<=50)
+        {
+           cont1++;
+        }
+        	else if( n>=51 && n<=75)
+        {
+            cont2++;
+        }
+        	else if( n>=76 && n<=100)
+        {
+            cont3++;
+        }
+    }
+    
+    cout<<" nos intervalos de 0 a 25 estão: "<<cont<<" numeros. "<<endl;
+cout<<" nos intervalos de 26 a 50 estão: "<<cont1<<" numeros. "<<endl;
+cout<<" nos intervalos de 51 a 75 estão: "<<cont2<<" numeros. "<<endl;
+cout<<" nos intervalos de 76 a 100 estão: "<<cont3<<" numeros. "<<endl;
+return 0;
+}
+
+/*
+
+
+
 11) Faça um programa que sorteie um número aleatório entre 0 e 500 e pergunte ao usuário qual é o "número mágico". O programa deverá indicar se a tentativa efetuada pelo usuário é maior ou menor que o número mágico e contar o número de tentativas. Quando o usuário conseguir acertar o número o programa deverá classificar o usuário como: 
 a. De 1 a 3 tentativas: muito sortudo 
 b. De 4 a 6 tentativas: sortudo 
 c. De 7 a 10 tentativas: normal 
 d. > 10 tentativas: tente novamente 
-12) Chico tem 1,50 metro e cresce 2 centímetros por ano, enquanto Zé tem 1,10 metro e cresce 3 centímetros por ano. Construa um programa que calcule e imprima quantos anos serão necessários para que Zé seja maior que Chico.
+
 */
 
+#include <iostream>
+#include <cstdlib>  // Para rand() e srand()
+#include <ctime>    // Para time()
+using namespace std;
+
+int main() {
+    // Inicializa o gerador de números aleatórios
+    srand(static_cast<unsigned int>(time(0)));
+
+    // Sorteia um número aleatório entre 0 e 500
+    int numeroMagico = rand() % 501;
+
+    int tentativa;
+    int numeroTentativas = 0;
+    bool acertou = false;
+
+    cout << "Adivinhe o número mágico (entre 0 e 500): ";
+
+    // Loop principal para o jogo
+    while (!acertou) {
+        cin >> tentativa;
+        numeroTentativas++;
+
+        if (tentativa < numeroMagico) {
+            cout << "O número mágico é maior. Tente novamente: ";
+        } else if (tentativa > numeroMagico) {
+            cout << "O número mágico é menor. Tente novamente: ";
+        } else {
+            acertou = true;
+            cout << "Parabéns! Você acertou o número mágico!" << endl;
+        }
+    }
+
+    // Classificação com base no número de tentativas
+    cout << "Número de tentativas: " << numeroTentativas << endl;
+    if (numeroTentativas <= 3) {
+        cout << "Muito sortudo!" << endl;
+    } else if (numeroTentativas <= 6) {
+        cout << "Sortudo!" << endl;
+    } else if (numeroTentativas <= 10) {
+        cout << "Normal!" << endl;
+    } else {
+        cout << "Tente novamente!" << endl;
+    }
+
+    return 0;
+}
 
 /*
-/////////////////////////////////////////////
-//  n9
-
-#include<iostream>
-#include<locale.h>
-using namespace std;
-int main(){
-	setlocale(LC_ALL," portuguese");
-	int nume, i;
-	cout<<" Digite um numero: "<<endl;
-	cin>>nume;
-	
-	if(nume==1){
-		cout<<"o numero nao e primo"<<endl;
-	}
-	
-	for(int i=2;i<=nume; i++){
-	
-		if(nume%i==0){
-			cout<<" o numero nao e primo "<<endl;
-			break;
-		}
-		
-		
-		else{
-			cout<<" o numero e primo. "<<endl;
-			break;
-		}
-    }
-	
-	return 0;
-}
-
-
-/////////////////////////////////////////
-// n10
-
-
-#include<iostream>
-#include<locale.h>
-using namespace std;
-int main(){
-	setlocale(LC_ALL, "portuguese");
-	int nume, cont=0, cont1=0, cont2=0, cont3=0;
-	
-	while( nume>=0){
-		cout<<" Digite um numero: "<<endl;
-	cin>>nume;
-		if( nume>=0 && nume<=25){
-			cont++;
-		}
-	else if( nume>=26 && nume<=50){
-			cont1++;
-		}
-	else if( nume>=51 && nume<=75){
-			cont2++;
-		}
-	else if( nume>=76 && nume<=100){
-			cont3++;
-		}
-	}
-	cout<<" nos intervalos de 0 a 25 estão: "<<cont<<" numeros. "<<endl;
-	cout<<" nos intervalos de 26 a 50 estão: "<<cont1<<" numeros. "<<endl;
-	cout<<" nos intervalos de 51 a 75 estão: "<<cont2<<" numeros. "<<endl;
-	cout<<" nos intervalos de 76 a 100 estão: "<<cont3<<" numeros. "<<endl;
-	return 0;
-}
-
-
-///////////////////////////////////////
-// n12
-
-#include<iostream>
-#include<locale.h>
-#define PERCENTUAL_chico 0.02
-#define PERCENTUAL_ze 0.03
-using namespace std;
-int main (){
-	float chico=1.50, ze=1.10;
-	int anos=0;
-	while(chico>ze){
-		chico=chico+PERCENTUAL_chico;
-		ze=ze+PERCENTUAL_ze;
-		anos++;
-	}
-	cout<<" Tamanho de chico "<<chico<<endl;
-	cout<<" Tamanho de ze "<<ze<<endl;
-	cout<<" Serao necessarios "<< anos <<" anos para Ze alcancar Chico."<<endl;
-	return 0;
-}
-
+12) Chico tem 1,50 metro e cresce 2 centímetros por ano,
+enquanto Zé tem 1,10 metro e cresce 3 centímetros por ano.
+Construa um programa que calcule e imprima quantos anos
+serão necessários para que Zé seja maior que Chico.
 */
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    float   chico=1.50, ze=1.10;
+    int cont=0;
+    
+        while( ze<=chico)
+        {
+            chico = chico + 0.02;
+            ze = ze + 0.03;
+            
+            cont ++;
+        }
+        
+        cout<<chico<<endl;
+        cout<<ze<<endl;
+        cout<<cont <<" Anos"<<endl;
+        
+    return 0;
+}
+
+
