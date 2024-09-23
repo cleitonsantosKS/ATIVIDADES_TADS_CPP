@@ -25,7 +25,7 @@ int main()
 
 // QUESTÃO 2
 
-/*
+
 #include <iostream>
 
 using namespace std;
@@ -59,7 +59,7 @@ int main()
 retorne o fatorial desse número. Use o tipo void.
 */
 
-/*
+
 #include <iostream>
 using namespace std;
 
@@ -93,7 +93,7 @@ programa que a chamou. O programa deverá então exibir o valor a ser pago. Use 
 tipo void.
 */
 
-/*
+
 #include <iostream>
 using namespace std;
 
@@ -123,7 +123,7 @@ int main (){
 "Criança" (0-12), "Adolescente" (13-17), "Adulto" (18-64) ou "Idoso" (65+).
 */
 
-/*
+
 #include <iostream>
 using namespace std;
 
@@ -158,7 +158,7 @@ int main(){
 /*6) Crie uma função que receba um valor em reais e a cotação atual do dólar, e retorne
 o valor convertido para dólares.*/
 
-/*
+
 #include <iostream>
 using namespace std;
 
@@ -180,7 +180,7 @@ int main (){
 
 /*Faça uma função que receba, por parâmetro, um valor inteiro e positivo e retorne o número de divisores desse valor.*/
 
-/*
+
 #include <iostream>
 
 using namespace std;
